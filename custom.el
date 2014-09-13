@@ -160,7 +160,8 @@
 ; notes 保存位置
 ;(setq org-default-notes-file (concat org-directory "/notes.org"))
 ; 绑定热键
-(define-key global-map "\C-cc" 'org-capture)
+;(define-key global-map "\C-cc" 'org-capture)
+(define-key global-map [f8] 'org-capture)
 ; 模板
 (setq org-capture-templates '(
 ("a" "Appointment" entry (file+headline "~/org/appointment.org" "Calendar")
