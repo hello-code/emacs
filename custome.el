@@ -1,1 +1,0 @@
-/home/z/.emacs.d/custom.el
