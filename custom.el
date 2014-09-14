@@ -76,13 +76,6 @@
 (setq calendar-latitude +31.475);维度
 (setq calendar-longitude +104.727);经度
 
-;; 中文日历
-(require 'cal-china-x)
-(setq mark-holidays-in-calendar t)
-(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
-(setq calendar-holidays cal-china-x-important-holidays)
-
-
 ;==================================================
 ;插件配置
 ;==================================================
@@ -125,10 +118,6 @@
 ;; (set-face-background 'ac-selection-face "steelblue")
 (require 'pos-tip);帮助菜单的显示位置
 (setq ac-quick-help-prefer-pos-tip t)
-
-;; for c/c++ 放在site-lisp目录里不识别!!
-;这个extension就可以代替下面的my:ac-c-header-init()了！
-(require 'auto-complete-clang-extension)
 
 ;==================================================
 ;可被 auto-complete-clang-extension 代替
@@ -198,6 +187,20 @@ Added: %U")
 ;; 大纲视图缩进
 ;(setq org-startup-indented t)
 (setq org-hide-leading-stars t)
+
+;==================================================
+;; 第三方插件的路径： site-lisp
+;==================================================
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
+
+;; for c/c++
+(require 'auto-complete-clang-extension)
+
+;; 中文日历
+(require 'cal-china-x)
+(setq mark-holidays-in-calendar t)
+(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
+(setq calendar-holidays cal-china-x-important-holidays)
 
 (provide 'custom)
 ;;; custom.el ends here
