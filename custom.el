@@ -71,8 +71,8 @@
 (require 'calendar)
 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
 (setq calendar-week-start-day 1) ; 每周第一天是周一
-(setq mark-diary-entries-in-calendar t) ; 标记有记录的日子
-(setq mark-holidays-in-calendar t) ; 标记节假日
+(setq calendar-mark-diary-entries-flag t) ; 标记有记录的日子
+(setq calendar-mark-holidays-flag t)      ; 标记节假日
 (setq calendar-latitude +31.475);维度
 (setq calendar-longitude +104.727);经度
 
@@ -198,7 +198,7 @@ Added: %U")
 
 ;; 中文日历
 (require 'cal-china-x)
-(setq mark-holidays-in-calendar t)
+(setq calendar-mark-holidays-flag t)
 (setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
 (setq calendar-holidays cal-china-x-important-holidays)
 
