@@ -116,7 +116,7 @@
 ;; (set-face-background 'ac-candidate-face "lightgray")
 ;; (set-face-underline 'ac-candidate-face "darkgray")
 ;; (set-face-background 'ac-selection-face "steelblue")
-(require 'pos-tip);帮助菜单的显示位置
+;(require 'pos-tip);帮助菜单的显示位置
 (setq ac-quick-help-prefer-pos-tip t)
 
 ;==================================================
@@ -194,7 +194,7 @@ Added: %U")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;; for c/c++
-(require 'auto-complete-clang-extension)
+;(require 'auto-complete-clang-extension)
 
 ;; 中文日历
 (require 'cal-china-x)
