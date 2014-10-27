@@ -38,6 +38,12 @@
 ;;光标形状
 (setq-default cursor-type 'bar);bar:竖线 box:方块
 
+;;光标颜色
+(set-cursor-color "white")
+
+;;鼠标颜色
+(set-mouse-color "white")
+
 ;;高亮当前行
 (global-hl-line-mode t)
 ;取消高亮当前行的下划线
@@ -116,8 +122,8 @@
 ;; (set-face-background 'ac-candidate-face "lightgray")
 ;; (set-face-underline 'ac-candidate-face "darkgray")
 ;; (set-face-background 'ac-selection-face "steelblue")
-(require 'pos-tip);帮助菜单的显示位置
-(setq ac-quick-help-prefer-pos-tip t)
+;(require 'pos-tip);帮助菜单的显示位置
+;(setq ac-quick-help-prefer-pos-tip t)
 
 ;==================================================
 ;可被 auto-complete-clang-extension 代替
@@ -194,7 +200,7 @@ Added: %U")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;; for c/c++
-(require 'auto-complete-clang-extension)
+;(require 'auto-complete-clang-extension)
 
 ;; 中文日历
 (require 'cal-china-x)
