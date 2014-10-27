@@ -38,6 +38,12 @@
 ;;光标形状
 (setq-default cursor-type 'bar);bar:竖线 box:方块
 
+;;光标颜色
+(set-cursor-color "white")
+
+;;鼠标颜色
+(set-mouse-color "white")
+
 ;;高亮当前行
 (global-hl-line-mode t)
 ;取消高亮当前行的下划线
@@ -117,7 +123,11 @@
 ;; (set-face-underline 'ac-candidate-face "darkgray")
 ;; (set-face-background 'ac-selection-face "steelblue")
 ;(require 'pos-tip);帮助菜单的显示位置
+<<<<<<< HEAD
 (setq ac-quick-help-prefer-pos-tip t)
+=======
+;(setq ac-quick-help-prefer-pos-tip t)
+>>>>>>> be86293a9f670b969a9ad4eff963ac92126a9cd8
 
 ;==================================================
 ;可被 auto-complete-clang-extension 代替
