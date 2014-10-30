@@ -143,13 +143,6 @@
 ;; (define-key global-map [f12] 'cscope-find-global-definition-no-prompting)
 ;; (define-key global-map [S-f12] 'cscope-pop-mark)
 
-;; org-agenda目录-统一管理
-(require 'org)
-(setq org-agenda-files (list
-                        ;; "/mnt/hgfs/iemacs/journal.org"
-                        ;; "/mnt/hgfs/Project/Finance/org"
-                        "~/org"
-                        ))
 ;在议程中加入约会
 (org-agenda-to-appt)
 
@@ -162,6 +155,15 @@
 (setq appt-audible t) ;声音提醒
 (setq appt-display-mode-line t);在状态栏显示时间（分钟）
 
+;; org-agenda目录-统一管理
+(require 'org)
+(setq org-agenda-files (list
+                        ;; "/mnt/hgfs/iemacs/journal.org"
+                        ;; "/mnt/hgfs/Project/Finance/org"
+                        ;;"~/org"
+                        "/mnt/hgfs/org"
+                        ))
+
 ;; org-Capture
 ; notes 保存位置
 ;(setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -170,34 +172,34 @@
 (define-key global-map [f8] 'org-capture)
 ; 模板
 (setq org-capture-templates '(
-("a" "Appointment" entry (file+headline "~/org/appointment.org" "Calendar")
+("a" "Appointment" entry (file+headline "/mnt/hgfs/org/appointment.org" "Calendar")
 "* APPT %^{Description} %^g
 %?
-Added: %U")
+Added: %U" :empty-lines 1)
 
-("j" "Journal" entry (file+datetree "~/org/journal.org")
+("j" "Journal" entry (file+datetree "/mnt/hgfs/org/journal.org")
 "* %<%T> %?" :empty-lines 1)
 
-("l" "Log Time" entry (file+datetree "~/org/timelog.org" )
+("l" "Log Time" entry (file+datetree "/mnt/hgfs/org/timelog.org" )
 "** %U - %^{Activity} :TIME:")
 
-("m" "Memo" entry (file+datetree "~/org/memo.org")
+("m" "Memo" entry (file+datetree "/mnt/hgfs/org/memo.org")
 "* %^{Description} %^g\nQuote:%a
 %?\nAdded:%U" :empty-lines 1)
 
-("n" "Notes" entry (file+datetree "~/org/notes.org")
+("n" "Notes" entry (file+datetree "/mnt/hgfs/org/notes.org")
 "* %^{Description} %^g
 %?\nAdded:%U" :empty-lines 1)
 
-("t" "Todo" entry (file+headline "~/org/gtd.org" "Inbox")
+("t" "Todo" entry (file+headline "/mnt/hgfs/org/gtd.org" "Inbox")
 "* TODO %?\nQuote:%a\nAdded:%U" :empty-lines 1)
 
 ("r" "Tommorrow Todo" entry
-(file+headline "~/org/gtd.org" "Tomorrow")
+(file+headline "/mnt/hgfs/org/gtd.org" "Tomorrow")
 "** TODO %^{Description} %^g\nSCHEDULED: <%(org-read-date nil nil \"+1d\")>%?\nAdded:%U"
 :empty-lines 1)
 
-("u" "Url Link" plain (file "~/org/links.org")
+("u" "Url Link" plain (file "/mnt/hgfs/org/links.org")
  "* %?\n %x\n")
 ))
 
