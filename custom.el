@@ -88,14 +88,6 @@
 ;;多窗口
 (window-numbering-mode t)
 
-;; org-agenda目录-统一管理
-(require 'org)
-(setq org-agenda-files (list
-                        ;; "/mnt/hgfs/iemacs/journal.org"
-                        ;; "/mnt/hgfs/Project/Finance/org"
-                        "~/org"
-                        ))
-
 ;; jedi
 (autoload 'jedi:setup "jedi" nil t)
 (setq jedi:setup-keys t);注意这句的位置要靠前
@@ -123,11 +115,7 @@
 ;; (set-face-underline 'ac-candidate-face "darkgray")
 ;; (set-face-background 'ac-selection-face "steelblue")
 ;(require 'pos-tip);帮助菜单的显示位置
-<<<<<<< HEAD
-(setq ac-quick-help-prefer-pos-tip t)
-=======
 ;(setq ac-quick-help-prefer-pos-tip t)
->>>>>>> be86293a9f670b969a9ad4eff963ac92126a9cd8
 
 ;==================================================
 ;可被 auto-complete-clang-extension 代替
@@ -154,6 +142,25 @@
 ;; ;;绑定热键-举例
 ;; (define-key global-map [f12] 'cscope-find-global-definition-no-prompting)
 ;; (define-key global-map [S-f12] 'cscope-pop-mark)
+
+;; org-agenda目录-统一管理
+(require 'org)
+(setq org-agenda-files (list
+                        ;; "/mnt/hgfs/iemacs/journal.org"
+                        ;; "/mnt/hgfs/Project/Finance/org"
+                        "~/org"
+                        ))
+;在议程中加入约会
+(org-agenda-to-appt)
+
+;; 提醒
+(require 'appt)
+(appt-activate t);启用约会提醒
+(setq appt-display-format 'window);提醒出现的方式
+(setq appt-message-warning-time '5);在到期前5分钟提醒
+(setq appt-display-duration '30);提醒持续时间（秒）
+(setq appt-audible t) ;声音提醒
+(setq appt-display-mode-line t);在状态栏显示时间（分钟）
 
 ;; org-Capture
 ; notes 保存位置
