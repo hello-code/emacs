@@ -32,6 +32,9 @@
 (global-set-key [(C-up)] 'md/move-lines-up)
 (global-set-key [(C-down)] 'md/move-lines-down)
 
+;;开启自动换行
+(setq-default truncate-lines nil)
+
 ;; 开启行号
 (global-linum-mode t)
 
@@ -164,6 +167,9 @@
                         "/mnt/hgfs/org"
                         "/mnt/hgfs/org/project"
                         ))
+
+;;org-mode中换行
+(setq org-startup-truncated nil)
 
 ;; org-Capture
 ; notes 保存位置
