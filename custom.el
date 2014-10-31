@@ -162,6 +162,7 @@
                         ;; "/mnt/hgfs/Project/Finance/org"
                         ;;"~/org"
                         "/mnt/hgfs/org"
+                        "/mnt/hgfs/org/project"
                         ))
 
 ;; org-Capture
