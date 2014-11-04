@@ -178,37 +178,13 @@
 ;(define-key global-map "\C-cc" 'org-capture)
 (define-key global-map [f8] 'org-capture)
 ; 模板
-(setq org-capture-templates '(
-("a" "Appointment" entry (file+headline "/mnt/hgfs/org/appointment.org" "Calendar")
-"* APPT %^{Description} %^g
-%?
-Added: %U" :empty-lines 1)
-
-("j" "Journal" entry (file+datetree "/mnt/hgfs/org/journal.org")
-"* %<%T> %?" :empty-lines 1)
-
-("l" "Log Time" entry (file+datetree "/mnt/hgfs/org/timelog.org" )
-"** %U - %^{Activity} :TIME:")
-
-("m" "Memo" entry (file+datetree "/mnt/hgfs/org/memo.org")
-"* %^{Description} %^g\nQuote:%a
-%?\nAdded:%U" :empty-lines 1)
-
-("n" "Notes" entry (file+datetree "/mnt/hgfs/org/notes.org")
-"* %^{Description} %^g
-%?\nAdded:%U" :empty-lines 1)
-
-("t" "Todo" entry (file+headline "/mnt/hgfs/org/gtd.org" "Inbox")
-"* TODO %?\nQuote:%a\nAdded:%U" :empty-lines 1)
-
-("r" "Tommorrow Todo" entry
-(file+headline "/mnt/hgfs/org/gtd.org" "Tomorrow")
-"** TODO %^{Description} %^g\nSCHEDULED: <%(org-read-date nil nil \"+1d\")>%?\nAdded:%U"
-:empty-lines 1)
-
-("u" "Url Link" plain (file "/mnt/hgfs/org/links.org")
- "* %?\n %x\n")
-))
+(setq org-capture-templates
+      '(("i" "Inbox" entry (file+headline "~/org/gtd.org" "Inbox")
+         "* TODO %?\n  Quote:%a\n  Added:%U\n")
+        ("t" "Todo" entry (file+headline "~/org/gtd.org" "Task")
+         "* TODO %?\n  Added:%U")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %<%T> %?")))
 
 ;; 大纲视图缩进
 ;(setq org-startup-indented t)
