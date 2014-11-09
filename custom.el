@@ -9,6 +9,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
  '(custom-safe-themes (quote ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" default)))
+ '(org-agenda-files nil)
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -163,9 +164,9 @@
 (setq org-agenda-files (list
                         ;; "/mnt/hgfs/iemacs/journal.org"
                         ;; "/mnt/hgfs/Project/Finance/org"
-                        ;;"~/org"
-                        "/mnt/hgfs/org"
-                        "/mnt/hgfs/org/project"
+                        "~/org"
+                        ;; "/mnt/hgfs/org"
+                        ;; "/mnt/hgfs/org/project"
                         ))
 
 ;;org-mode中换行
@@ -184,7 +185,10 @@
         ("t" "Todo" entry (file+headline "~/org/gtd.org" "Task")
          "* TODO %?\n  Added:%U")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
-         "* %<%T> %?")))
+         "* %<%T> %?")
+        ("l" "Log Time" entry (file+datetree "~/org/timelog.org")
+         "** %U - %^{Activity} :TIME:")
+        ))
 
 ;; 大纲视图缩进
 ;(setq org-startup-indented t)
