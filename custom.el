@@ -164,9 +164,10 @@
 (setq org-agenda-files (list
                         ;; "/mnt/hgfs/iemacs/journal.org"
                         ;; "/mnt/hgfs/Project/Finance/org"
-                        "~/org"
                         ;; "/mnt/hgfs/org"
                         ;; "/mnt/hgfs/org/project"
+                        "~/org"
+                        "~/org/project"
                         ))
 
 ;;org-mode中换行
